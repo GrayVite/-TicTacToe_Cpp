@@ -1,15 +1,13 @@
 #include <iostream>
 #include "GameBoard.h"
+#include "GameMenu.h"
 
 using namespace std;
 
 int main()
 {
-	char board[3][3];
-	GameBoard boardOps;
-
-	boardOps.initBoard(board);
-	boardOps.displayBoard(board, 'X');
+	GameMenu menu;
+	menu.displayMenu();
 
 	return 0;
 }
