@@ -3,6 +3,6 @@ class GameMenu
 {
 public:
     int displayMenu();
-    void handleMenuChoice(int choice);
+    int handleMenuChoice(int choice);
 };
 

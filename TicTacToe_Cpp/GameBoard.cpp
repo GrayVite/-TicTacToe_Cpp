@@ -115,18 +115,73 @@ char GameBoard::checkWinner(char board[3][3])
     return ' ';
 }
 
-bool GameBoard::updateBoard(char board[3][3], char currentPlayer, std::pair<int, int> input)
+char GameBoard::updateBoard(char board[3][3], char currentPlayer, std::pair<int, int> input)
 {
     int rowIndex = input.first - 1;
     int colIndex = input.second - 1;
 
-    if (board[rowIndex][colIndex] != ' ')
+    char Winner = checkWinner(board);
+    if (Winner == ' ')
     {
-        return false;
+        bool full = isBoardFull(board);
+        if (full)
+        {
+            return 'F';
+        }
+        else
+        {
+            if (board[rowIndex][colIndex] != ' ')
+            {
+                return ' ';
+            }
+            else
+            {
+                board[rowIndex][colIndex] = currentPlayer;
+                return ' ';
+            }
+        }
     }
     else
     {
-        board[rowIndex][colIndex] = currentPlayer;
-        return true;
+        return Winner;
     }
+    
+}
+
+void GameBoard::displayTie(char board[3][3])
+{
+    std::cout << " +---+---+---+ \n";
+
+    for (int row = 0; row < 3; row++)
+    {
+        std::cout << " | ";
+        for (int col = 0; col < 3; col++)
+        {
+            std::cout << board[row][col];
+            std::cout << " | ";
+        }
+        std::cout << std::endl;
+        std::cout << " +---+---+---+ \n";
+    }
+
+    std::cout << "The game has ended in a Tie \n";
+}
+
+void GameBoard::displayWin(char board[3][3], char currentplayer)
+{
+    std::cout << " +---+---+---+ \n";
+
+    for (int row = 0; row < 3; row++)
+    {
+        std::cout << " | ";
+        for (int col = 0; col < 3; col++)
+        {
+            std::cout << board[row][col];
+            std::cout << " | ";
+        }
+        std::cout << std::endl;
+        std::cout << " +---+---+---+ \n";
+    }
+
+    std::cout << "Player " << currentplayer << " has won the Game\n";
 }

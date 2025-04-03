@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 
-class player
+class gamePlayer
 {
 public:
 	void switchPlayer(char& currentPlayer);

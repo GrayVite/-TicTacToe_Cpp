@@ -127,15 +127,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameBoard.cpp" />
     <ClCompile Include="GameMenu.cpp" />
-    <ClCompile Include="player.cpp" />
+    <ClCompile Include="gamePlayer.cpp" />
     <ClCompile Include="TIcTacToe_Cpp.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Game.h" />
     <ClInclude Include="GameBoard.h" />
     <ClInclude Include="GameMenu.h" />
-    <ClInclude Include="player.h" />
+    <ClInclude Include="gamePlayer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

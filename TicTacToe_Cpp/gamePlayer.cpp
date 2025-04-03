@@ -1,9 +1,9 @@
-#include "player.h"
+#include "gamePlayer.h"
 #include <iostream>
 
 using namespace std;
 
-int player::validateInput(const char* prompt)
+int gamePlayer::validateInput(const char* prompt)
 {
     int input;
     cout << prompt;
@@ -30,7 +30,7 @@ int player::validateInput(const char* prompt)
     }
 }
 
-pair<int, int> player::getPlayerInput()
+pair<int, int> gamePlayer::getPlayerInput()
 {
     // We'll create a function called getPlayerInput() that will handle the input logic. This function will:
 

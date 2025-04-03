@@ -20,13 +20,14 @@ int GameMenu::displayMenu()
     return choice;
 }
 
-void GameMenu::handleMenuChoice(int choice)
+int GameMenu::handleMenuChoice(int choice)
 {
     switch (choice)
     {
     case 1:
     {
         cout << "Starting New Game..." << endl;
+        return 1;
 
         break;
     }
@@ -35,6 +36,8 @@ void GameMenu::handleMenuChoice(int choice)
         cout << "Welcome to Tic-Tac-Toe!" << endl;
         cout << "Player 1 will be 'X' and Player 2 will be 'O'." << endl;
         cout << "To make a move, simply enter the row and column numbers." << endl;
+
+        displayMenu();
 
         break;
     }
@@ -51,6 +54,8 @@ void GameMenu::handleMenuChoice(int choice)
         cout << "Wins by O: " << winsO << endl;
         cout << "Ties: " << ties << endl;
 
+        displayMenu();
+
         break;
     }
     case 4:
@@ -61,6 +66,7 @@ void GameMenu::handleMenuChoice(int choice)
     default:
     {
         cout << "Invalid Choice. Please enter valid number from 1-4" << endl;
+        displayMenu();
 
         break;
     }

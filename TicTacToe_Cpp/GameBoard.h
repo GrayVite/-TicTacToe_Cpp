@@ -11,6 +11,9 @@ public:
 	char checkDiagnol(char board[3][3]);
 	char checkWinner(char board[3][3]);
 
-	bool updateBoard(char board[3][3], char currentPlayer, std::pair<int, int> input);
+	char updateBoard(char board[3][3], char currentPlayer, std::pair<int, int> input);
+
+	void displayTie(char board[3][3]);
+	void displayWin(char board[3][3], char currentplayer);
 };
 
