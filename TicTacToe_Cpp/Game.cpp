@@ -13,6 +13,7 @@ int Game::startGame()
 	{
 		gameBoard->displayBoard(board, player);
 		std::pair<int, int> playerIn = newPlayer->getPlayerInput();
+
 		winner = gameBoard->updateBoard(board, player, playerIn);
 
 		if (winner == ' ')
@@ -31,6 +32,7 @@ int Game::startGame()
 		else if (winner == 'X' || winner == 'O')
 		{
 			gameBoard->displayWin(board, winner);
+			isRunning = false;
 		}
 		else
 		{

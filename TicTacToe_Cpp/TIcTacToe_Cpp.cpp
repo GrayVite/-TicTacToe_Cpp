@@ -24,6 +24,7 @@ a:
 			if (run == 1)
 			{
 				delete game;
+				delete menu;
 				break;
 			}
 		}
