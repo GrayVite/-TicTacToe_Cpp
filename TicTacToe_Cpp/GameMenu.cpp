@@ -15,9 +15,9 @@ int GameMenu::displayMenu()
     cout << "Enter 1-4: ";
     cin >> choice;
 
-    handleMenuChoice(choice);
+    int result = handleMenuChoice(choice);
 
-    return choice;
+    return result;
 }
 
 int GameMenu::handleMenuChoice(int choice)
@@ -28,8 +28,6 @@ int GameMenu::handleMenuChoice(int choice)
     {
         cout << "Starting New Game..." << endl;
         return 1;
-
-        break;
     }
     case 2:
     {
@@ -39,7 +37,6 @@ int GameMenu::handleMenuChoice(int choice)
 
         displayMenu();
 
-        break;
     }
     case 3:
     {
@@ -56,7 +53,6 @@ int GameMenu::handleMenuChoice(int choice)
 
         displayMenu();
 
-        break;
     }
     case 4:
     {
@@ -68,7 +64,6 @@ int GameMenu::handleMenuChoice(int choice)
         cout << "Invalid Choice. Please enter valid number from 1-4" << endl;
         displayMenu();
 
-        break;
     }
     }
 }

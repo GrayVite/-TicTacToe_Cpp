@@ -7,6 +7,8 @@ using namespace std;
 
 int main()
 {	
+a:
+
 	int run = 0;
 
 	GameMenu* menu = new GameMenu();
@@ -25,7 +27,10 @@ int main()
 				break;
 			}
 		}
+		strt = 0;
 	}
+
+	goto a;
 
 	return 0;
 }

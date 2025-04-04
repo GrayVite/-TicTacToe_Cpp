@@ -12,12 +12,16 @@ int Game::startGame()
 	while (isRunning)
 	{
 		gameBoard->displayBoard(board, player);
-		playerIn = newPlayer->getPlayerInput();
+		std::pair<int, int> playerIn = newPlayer->getPlayerInput();
 		winner = gameBoard->updateBoard(board, player, playerIn);
 
 		if (winner == ' ')
 		{
 			newPlayer->switchPlayer(player);
+		}
+		else if (winner == 'E')
+		{
+			continue;
 		}
 		else if (winner == 'F')
 		{
@@ -26,7 +30,7 @@ int Game::startGame()
 		}
 		else if (winner == 'X' || winner == 'O')
 		{
-			gameBoard->displayWin(board, player);
+			gameBoard->displayWin(board, winner);
 		}
 		else
 		{
@@ -42,5 +46,5 @@ int Game::startGame()
 	}
 
 	std::cout << "Returning to main menu...\n";
-	return 0;
+	return 1;
 }

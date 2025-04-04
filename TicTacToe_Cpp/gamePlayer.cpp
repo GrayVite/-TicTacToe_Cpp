@@ -44,3 +44,15 @@ pair<int, int> gamePlayer::getPlayerInput()
 
     return make_pair(row, col);
 }
+
+void gamePlayer::switchPlayer(char& player)
+{
+    if (player == 'X')
+    {
+        player = 'O';
+    }
+    else
+    {
+        player = 'X';
+    }
+}

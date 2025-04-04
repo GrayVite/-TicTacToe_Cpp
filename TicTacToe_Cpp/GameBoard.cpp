@@ -77,10 +77,6 @@ char GameBoard::checkDiagnol(char board[3][3])
     {
         return board[0][0];
     }
-    else
-    {
-        return ' ';
-    }
 
     if (board[0][2] == board[1][1] && board[1][1] == board[2][0] && board[0][2] != ' ')
     {
@@ -120,33 +116,33 @@ char GameBoard::updateBoard(char board[3][3], char currentPlayer, std::pair<int,
     int rowIndex = input.first - 1;
     int colIndex = input.second - 1;
 
-    char Winner = checkWinner(board);
-    if (Winner == ' ')
+    // Check if the cell is empty before updating
+    if (board[rowIndex][colIndex] == ' ')
     {
-        bool full = isBoardFull(board);
-        if (full)
+        board[rowIndex][colIndex] = currentPlayer;
+
+        // Check for winner
+        char Winner = checkWinner(board);
+        if (Winner != ' ')
         {
-            return 'F';
+            return Winner; // Return winner if there is one
         }
-        else
+
+        // Check for tie
+        if (isBoardFull(board))
         {
-            if (board[rowIndex][colIndex] != ' ')
-            {
-                return ' ';
-            }
-            else
-            {
-                board[rowIndex][colIndex] = currentPlayer;
-                return ' ';
-            }
+            return 'F'; // Return 'F' for full board (tie)
         }
+
+        return ' '; // Return space to indicate the game should continue
     }
     else
     {
-        return Winner;
+        // Cell is already occupied
+        return 'E'; // Return 'E' to indicate an error
     }
-    
 }
+
 
 void GameBoard::displayTie(char board[3][3])
 {

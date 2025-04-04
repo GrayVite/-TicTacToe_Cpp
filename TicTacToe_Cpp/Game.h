@@ -11,7 +11,6 @@ public:
 	bool isRunning;
 	char player;
 	char winner;
-	std::pair<int, int> playerIn;
 	
 	int startGame();
 };
